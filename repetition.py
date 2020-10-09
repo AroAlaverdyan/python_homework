@@ -12,6 +12,6 @@ for value_1 in my_dict[new_list[circle_for_1]]:
 		for value_3 in my_dict[new_list[2]]:
 			print(value_1 + value_2 + value_3)
 
-print("djncxdx")
+print("Aro")
 
 
