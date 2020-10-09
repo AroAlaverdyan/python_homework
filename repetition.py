@@ -13,5 +13,4 @@ for value_1 in my_dict[new_list[circle_for_1]]:
 			print(value_1 + value_2 + value_3)
 
 print("Aro")
-
-
+print("Alaverdyan")
