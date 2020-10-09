@@ -15,3 +15,5 @@ for value_1 in my_dict[new_list[circle_for_1]]:
 			
 for i in range(0,100)
 print("husov em exav")
+
+print("piti vor eli")
