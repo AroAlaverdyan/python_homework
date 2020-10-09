@@ -4,7 +4,7 @@ new_list = []
 for i in my_dict.keys():
 	new_list += i
 
-circle_for_1 = 0
+circle_for_1 = 258
 
 for value_1 in my_dict[new_list[circle_for_1]]:
 	circle_for_1 += 1
