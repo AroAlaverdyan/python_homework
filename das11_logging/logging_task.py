@@ -26,10 +26,4 @@ def num_dicider():
 for _ in range(3):
 	
 	num_dicider()
-		
-
-
-
-
-
-
+	
