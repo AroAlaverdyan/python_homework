@@ -26,12 +26,12 @@ class About_brand:
 		return text_for_season
 
 class Product(Country, Brand, About_brand):
-	def __init__(self, product_name, type_, price, quantity, continent, country_name, brand_name, business_start_date, owner, source_of_inspiration):
+	def __init__(self, product_name, type_, price, quantity, continent, country_name, brand_name, business_start_date, owner, source_of_inspiration, discount):
 		self.product_name = product_name
 		self.type_ = type_
 		self.price = price
 		self.quantity = quantity
-		self.discount = 10
+		self.discount = discount
 
 		Country.__init__(self, continent, country_name)
 		Brand.__init__(self, brand_name, business_start_date)
@@ -44,18 +44,18 @@ class Product(Country, Brand, About_brand):
 		print(self.presentation_for_season())
 		print(f'\nNow more details about {self.product_name}: \nType: {self.type_} \nPrice: {self.price}$ \nQuantity: limited edition - {self.quantity} pcs')
 
-	def presentation_discount(self):
+	def price_discount(self):
 		a = (self.price * self.discount)/100
-		new_price = int(self.price - a)
-		print(f"\nWe have special offer for you. If you buy our {self.product_name} today, you'll get {self.discount}% off. So it'll be cost {new_price}$")
+		self.price = int(self.price - a)
+		print(f"\nWe have special offer for you. If you buy our {self.product_name} today, you'll get {self.discount}% off. So it'll be cost {self.price}$")
 
 	def presentation_quantity(self):
-		new_quantity = self.quantity + 50
-		text_for_quantity = F"\nIf the buyers be a lot, we will increase {self.product_name} quantity, making {new_quantity} pcs"
+		self.quantity = self.quantity + 50
+		text_for_quantity = F"\nIf the buyers be a lot, we will increase {self.product_name} quantity, making {self.quantity} pcs"
 		return text_for_quantity
 
-ring = Product(" Ring 'Dove'", 'silver', 67, 100, 'Asia', 'Armenia', 'Pregomesh', "2013", 'SIRUSHO', 'PreGomesh')
+ring = Product(" Ring 'Dove'", 'silver', 67, 100, 'Asia', 'Armenia', 'Pregomesh', "2013", 'SIRUSHO', 'PreGomesh', 10)
 
 ring.presentation_1()
-ring.presentation_discount()
-print(ring.presentation_quantity())
+# ring.price_discount()
+# print(ring.presentation_quantity())

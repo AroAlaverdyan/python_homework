@@ -33,7 +33,7 @@ middle - {self.mid_room_price}AMD and lux - {self.lux_room_price}AMD"
 					mid_input = input("\nNow book a room which is free(room1/room2/room3)\n")
 					if mid_input != "room1" and mid_input != "room2" and mid_input != "room3":
 						raise NameError('Please give me correct value')
-					
+	
 					if self.rooms_mid[mid_input] == "busy":
 						raise KeyError("That room is BUSY")
 
@@ -71,7 +71,7 @@ middle - {self.mid_room_price}AMD and lux - {self.lux_room_price}AMD"
 		check = True
 		while check:
 			try:
-				room_booking_input = input("\nChoose which type of room do you want - 1/for mid, 2/for lux\n")
+				room_booking_input = input("\n!!!!!Choose which type of room do you want - 1/for mid, 2/for lux\n")
 				if room_booking_input != "1" and room_booking_input != "2":
 					raise ValueError("Please, give correct value)))")
 				
@@ -130,7 +130,7 @@ class Taxi:
 		self.price_for_tour = price_for_tour
 		self.discount_2 = discount_2
 
-	def presentation_taxi(self):
+	def presentation(self):
 		text = f'Transport with {self.taxi_name} company, which provides {self.car_types} cars and price for it is {self.price_for_tour}'
 		return text
 
@@ -154,7 +154,7 @@ class Tour(Hotel, Taxi):
 		self.price_mid = price_mid
 
 	def global_presentation(self):
-		print(f'\nHello we offer {self.tour_name}, we have two options: {self.price_lux} and {self.price_mid} which includes', self.presentation_taxi(), self.presentation())
+		print(f'\nHello we offer {self.tour_name}, we have two options: {self.price_lux} and {self.price_mid} which includes', Taxi.presentation(self), Hotel.presentation(self))
 		
 
 

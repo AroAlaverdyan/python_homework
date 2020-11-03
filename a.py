@@ -1,2 +1,2 @@
 print("Hello from CMD")
-print("Aro")
+print("Aro Alaverdyan")
